@@ -1,0 +1,39 @@
+<div class="main" app-theme>
+    <div class="layout">
+        <div class="nav">
+            <ul>
+                <li><a [class.active]="viewMode == 'tab1'" (click)="viewMode ='tab1'">CHART 1</a></li>
+                <li><a [class.active]="viewMode == 'tab2'" (click)="viewMode ='tab2'">CHART 2</a></li>
+    <li><a [class.active]="viewMode == 'tab3'" (click)="viewMode ='tab3'">CHART 3</a></li>
+            </ul>
+
+
+
+        </div>
+
+        <div class="aside">
+            <div class="mode-icon">
+                <div (click)="toggle()">
+                    <span class="icon" *ngIf="!show"><fa-icon [icon]="faSun"></fa-icon></span>
+                    <span class="icon" *ngIf="show"><fa-icon [icon]="faMoon"></fa-icon></span>
+                </div>
+            </div>
+
+            <div class="cont" [ngSwitch]="viewMode">
+
+                <div id="tab1" *ngSwitchCase="'tab1'">
+                    <div echarts [options]="chartOption1" class="demo-chart"></div>
+                </div>
+                <div id="tab2" *ngSwitchCase="'tab2'">
+                    <div echarts [options]="chartOption2" class="demo-charts"></div>
+                </div>
+                <div id="tab3" *ngSwitchCase="'tab3'">
+                    <div echarts [options]="chartOption3" class="demo-charts"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

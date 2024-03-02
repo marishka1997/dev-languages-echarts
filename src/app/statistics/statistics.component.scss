@@ -1,0 +1,145 @@
+.demo-chart {
+    height: 400px;
+}
+
+.icon {
+    font-size: 18px;
+    padding: 10px;
+    background-color: var(--sun);
+    cursor: pointer;
+    border: 1px solid var(--on-primary);
+    border-radius: 50%;
+}
+
+.mode-icon {
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+}
+
+.layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.aside {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont {
+    padding: 25px;
+    height: 100%;
+}
+
+.nav {
+    padding: 25px;
+    min-height: 100vh;
+    height: 100%;
+    width: 200px;
+    border-right: 2px solid var(--nav-border);
+    transition: border-right 2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--menu-col);
+    font-size: 19px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+li a:hover {
+    color: #dbd969;
+}
+
+li a.active {
+    color: var(--menu-color);
+}
+
+.main {
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    text-align: left;
+    background: var(--primary);
+    color: var(--on-primary);
+    transition: background 3s;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    top: 11px;
+    margin: 0 5px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(145, 114, 114, 0.5);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #3b3236;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
